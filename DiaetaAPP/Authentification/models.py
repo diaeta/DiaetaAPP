@@ -3,7 +3,10 @@ from django.db import models
 from django.utils.html import mark_safe
 from .utils import get_fernet
 import pyotp
-from segno import helpers
+from django_otp.plugins.otp_totp.models import TOTPDevice
+import segno
+from io import BytesIO
+import base64
 
 class User(AbstractUser):
     otp_secret_encrypted = models.BinaryField(null=True)
@@ -27,8 +30,12 @@ class User(AbstractUser):
             if not self.otp_secret:
                 return 'No OTP Secret generated yet.'
             otp_auth_url = pyotp.totp.TOTP(self.otp_secret).provisioning_uri(name=self.email, issuer_name="DiaetaApp")
-            qr_code = helpers.make(otp_auth_url)
-            return mark_safe('<img src="{}">'.format(qr_code.get_image().to_data_url()))
+            qr_code = segno.make(otp_auth_url)
+            buffer = BytesIO()
+            qr_code.save(buffer, kind='png')
+            img_str = base64.b64encode(buffer.getvalue()).decode()
+            img_tag = '<img src="data:image/png;base64,{}"/>'.format(img_str)
+            return mark_safe(img_tag)
         except Exception as e:
             return str(e)
 
