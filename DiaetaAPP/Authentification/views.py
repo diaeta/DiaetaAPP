@@ -25,7 +25,7 @@ def login_view(request):
             if user is not None:
                 if user.verify_otp(otp):
                     login(request, user)
-                    return redirect('dashboard')
+                    return redirect('dashboard:home')
                 else:
                     form.add_error('otp', 'Invalid one-time password')
                     cache.set(ip, attempts + 1, 300)  # Increment attempts and set 5 minute expiration
