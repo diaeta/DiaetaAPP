@@ -39,8 +39,10 @@ class User(AbstractUser):
         except Exception as e:
             return str(e)
         
+    # Verify the OTP
     def verify_otp(self, otp):
-        return pyotp.TOTP(self.otp_secret).verify(otp)
+        totp = pyotp.TOTP(self.otp_secret)
+        return totp.verify(otp)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
