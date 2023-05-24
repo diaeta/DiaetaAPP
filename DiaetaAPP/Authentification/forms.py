@@ -1,21 +1,23 @@
-# forms.py
-
+import logging
 from django import forms
-from django.contrib.auth.forms import AuthenticationForm
+from django.core.exceptions import ValidationError
 
-# This form is used in the login view
-class LoginForm(AuthenticationForm):
-    otp = forms.CharField(
-        max_length=6,
-        required=True,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'OTP Code', 'aria-label': 'OTP Code', 'aria-describedby': 'basic-addon2'}), 
-        label='',
-    )
-    username = forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Username', 'aria-label': 'Username', 'aria-describedby': 'basic-addon1'}), 
-        label='',
-    )
-    password = forms.CharField(
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password', 'aria-label': 'Password'}), 
-        label='',
-    )
+
+logger = logging.getLogger(__name__)
+
+class LoginForm(forms.Form):
+    username = forms.CharField()
+    password = forms.CharField()
+    otp = forms.CharField()
+
+    def clean(self):
+        cleaned_data = super().clean()
+        logger.info('LoginForm cleaned data: %s', cleaned_data)
+        username = cleaned_data.get("username")
+        password = cleaned_data.get("password")
+        otp = cleaned_data.get("otp")
+        
+        # Perform your validation here, if any, and raise ValidationError if needed
+        # For example:
+        if not username or not password or not otp:
+            raise ValidationError('All fields are required')

@@ -1,0 +1,56 @@
+C:\Users\pierr\OneDrive\Desktop\DiaetaAPP\DiaetaAPP\Authentification\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+POST request received for login. Data: <QueryDict: {'csrfmiddlewaretoken': ['jLgr5AXyNBOdlzPbvI4RhNOrh9im8KLplaGLWmltywSLvvZlRiQFYEwmlYp8BXgR'], 'username': ['pierreaz'], 'otp': ['090973'], 'password': ['1234']}>
+LoginForm cleaned data: {'username': 'pierreaz', 'password': '1234', 'otp': '090973'}
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\pierr\OneDrive\Desktop\DiaetaAPP\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pierr\OneDrive\Desktop\DiaetaAPP\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pierr\OneDrive\Desktop\DiaetaAPP\env\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pierr\OneDrive\Desktop\DiaetaAPP\env\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pierr\OneDrive\Desktop\DiaetaAPP\diaetaapp\Authentification\views.py", line 38, in post
+    user = User.objects.get(username=username)
+          ^^^^
+NameError: name 'User' is not defined
+C:\Users\pierr\OneDrive\Desktop\DiaetaAPP\DiaetaAPP\Authentification\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+POST request received for login. Data: <QueryDict: {'csrfmiddlewaretoken': ['jLgr5AXyNBOdlzPbvI4RhNOrh9im8KLplaGLWmltywSLvvZlRiQFYEwmlYp8BXgR'], 'username': ['pierreaz'], 'otp': ['090973'], 'password': ['1234']}>
+LoginForm cleaned data: {'username': 'pierreaz', 'password': '1234', 'otp': '090973'}
+OTP verification failed.
+POST request received for login. Data: <QueryDict: {'csrfmiddlewaretoken': ['bLHnvo35ssGZs0D43Y8ixzmjHqMefkCcda7Hmar0dnKxCWNepyU6eq4eLfT0Ix7E'], 'username': ['pierreaz'], 'otp': ['573375'], 'password': ['1234']}>
+LoginForm cleaned data: {'username': 'pierreaz', 'password': '1234', 'otp': '573375'}
+User logged in successfully. Redirecting to home.
+C:\Users\pierr\OneDrive\Desktop\DiaetaAPP\DiaetaAPP\Authentification\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+POST request received for login. Data: <QueryDict: {'csrfmiddlewaretoken': ['TVwOANK2VPtRP3NFeRJt1tBC8fnbWfrS3Jo83HdHJxWc5BXJXGITJqShfm8KnfvW'], 'username': ['pierreaz'], 'otp': ['316713'], 'password': ['1234']}>
+LoginForm cleaned data: {'username': 'pierreaz', 'password': '1234', 'otp': '316713'}
+User obtained: pierreaz
+POST request received for login. Data: <QueryDict: {'csrfmiddlewaretoken': ['phGgFT5TT6UXpEWnmozIsOW5tyWClH1Rz5yA8NyyHOniFc6r5dy8aLdKAFHbMH5V'], 'username': ['pierreaz'], 'otp': ['624806'], 'password': ['1234']}>
+LoginForm cleaned data: {'username': 'pierreaz', 'password': '1234', 'otp': '624806'}
+User obtained: pierreaz
+POST request received for login. Data: <QueryDict: {'csrfmiddlewaretoken': ['zkYdDnL0jwikyV9wXi4qJ9dQu6n13J0IJ8Qx6heF7eLFOtjAG73Qr6uvBd8AuJ4M'], 'username': ['pierreaz'], 'otp': ['624806'], 'password': ['1234']}>
+LoginForm cleaned data: {'username': 'pierreaz', 'password': '1234', 'otp': '624806'}
+User obtained: pierreaz
+C:\Users\pierr\OneDrive\Desktop\DiaetaAPP\DiaetaAPP\Authentification\views.py changed, reloading.
+Watching for file changes with StatReloader
+POST request received for login. Data: <QueryDict: {'csrfmiddlewaretoken': ['zkYdDnL0jwikyV9wXi4qJ9dQu6n13J0IJ8Qx6heF7eLFOtjAG73Qr6uvBd8AuJ4M'], 'username': ['pierreaz'], 'otp': ['624806'], 'password': ['1234']}>
+LoginForm cleaned data: {'username': 'pierreaz', 'password': '1234', 'otp': '624806'}
+OTP verification failed.
+POST request received for login. Data: <QueryDict: {'csrfmiddlewaretoken': ['tNapTQTbv2eO1o1tCHDdyIiYEcy3hMGlDB2JmKmQjKH9hWbxlwCDgFzDLjjCIMKp'], 'username': ['pierreaz'], 'otp': ['595036'], 'password': ['1234']}>
+LoginForm cleaned data: {'username': 'pierreaz', 'password': '1234', 'otp': '595036'}
+User logged in successfully. Redirecting to home.
+Forbidden (CSRF token from POST incorrect.): /
+POST request received for login. Data: <QueryDict: {'csrfmiddlewaretoken': ['r63XZFlswALfI3viLdcXnJmDOhpEjib2466Nd0LuCCQUw3JEdeJEddIbvFc3Jmna'], 'username': ['pierreaz'], 'otp': ['121454'], 'password': ['1234']}>
+LoginForm cleaned data: {'username': 'pierreaz', 'password': '1234', 'otp': '121454'}
+OTP verification failed.
