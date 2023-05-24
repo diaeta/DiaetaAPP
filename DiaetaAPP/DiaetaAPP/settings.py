@@ -31,6 +31,9 @@ SECRET_KEY = "django-insecure-w$vhs!xqb_r_sbio#g+iqart*81ms4p70oqew34y^k_s)t&jph
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+import logging.config
+
+
 ALLOWED_HOSTS = []
 
 
@@ -47,6 +50,7 @@ INSTALLED_APPS = [
     "django_otp",
     "django_otp.plugins.otp_totp",
     "Authentification",
+    "dashboard",
 ]
 
 MIDDLEWARE = [

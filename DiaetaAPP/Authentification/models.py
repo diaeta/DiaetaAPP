@@ -38,6 +38,9 @@ class User(AbstractUser):
             return mark_safe(img_tag)
         except Exception as e:
             return str(e)
+        
+    def verify_otp(self, otp):
+        return pyotp.TOTP(self.otp_secret).verify(otp)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
